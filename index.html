@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Style Links -->
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- CSS Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- Website Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/assets/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Stage2-Task2-JS-MarketShop</title>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <!-- Header -->
+      <header class="header-de">
+        <div class="container header-container">
+          <div class="header-logo-container">
+            <img
+              src="assets/images/header-logo.jpg"
+              alt="Header Logo"
+              class="header-logo"
+            />
+          </div>
+
+          <div class="header-content">
+            <ul class="header-list">
+              <li class="header-item">
+                <a href="#" class="header-item-link">Home</a>
+              </li>
+
+              <li class="header-item">
+                <a href="#" class="header-item-link">Products</a>
+              </li>
+
+              <li class="header-item">
+                <a href="#" class="header-item-link">Contact Us</a>
+              </li>
+
+              <li class="header-item">
+                <a href="#" class="header-item-link">About Us</a>
+              </li>
+
+              <li class="header-item">
+                <!-- <label for="site-search">Search the site:</label> -->
+                <input
+                  type="search"
+                  id="site-search"
+                  class="header-input--search"
+                  placeholder="Search Product"
+                />
+                <button class="btn-de header-btn">Search</button>
+              </li>
+
+              <li class="header-item header-item--cart">
+                <a href="#" class="header-item-link">
+                  <svg class="icon header-icon">
+                    <use
+                      xlink:href="assets/sprite.svg#icon-shopping-cart"
+                    ></use>
+                  </svg>
+                </a>
+
+                <span class="cart-items-num">0</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- Cart Container -->
+      <div class="cart-container">
+        <h2 class="heading-2 cart-heading-top">
+          <span>
+            <svg class="icon cart-cont-icon">
+              <use xlink:href="assets/sprite.svg#icon-th-small-outline"></use>
+            </svg>
+          </span>
+
+          <span> Your Cart </span>
+        </h2>
+
+        <div class="cart-contents">
+          <div class="cart-contents---clear-all">
+            <button class="cart-container-btn--clear-all">Clear all</button>
+          </div>
+        </div>
+
+        <div class="cart-heading-bot">
+          <div class="cart-total-price">
+            <span>Total Price:</span>
+            <span>0 JD</span>
+          </div>
+          <button class="cart-container-btn">Check Out</button>
+        </div>
+      </div>
+
+      <div class="sub-container container">
+        <!--  append-container  -->
+        <div class="filtered-display-container">
+          <div class="append-container-btns">
+            <div class="dropdown append-container-dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Filter Content
+              </button>
+              <ul
+                class="dropdown-menu append-container-drpdown-menu"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <a class="dropdown-item lower-price" href="#">
+                    <svg class="icon append-dropdown-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-arrow-down-right2"
+                      ></use>
+                    </svg>
+                    <span>Lower Price</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item higher-price" href="#">
+                    <svg class="icon append-dropdown-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-arrow-up-right2"
+                      ></use>
+                    </svg>
+                    <span> Higher Price </span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item release-date" href="#">
+                    <svg class="icon append-dropdown-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar1"></use>
+                    </svg>
+                    <span> Release Date </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <h2 class="heading-2 specie-name filtered-container-heading">
+              Foods
+            </h2>
+
+            <button class="btn-de filtered-container-btn--back">
+              <svg class="icon append-icon">
+                <use xlink:href="assets/sprite.svg#icon-arrow-left"></use>
+              </svg>
+
+              <span>Back</span>
+            </button>
+          </div>
+
+          <div class="append-container"></div>
+        </div>
+
+        <!-- Products Container -->
+        <div class="products-container">
+          <!-- Food products -->
+          <div class="species-container species-container--food">
+            <div class="product-desc">
+              <h2 class="heading-2 specie-name">
+                <svg class="icon specie-icon">
+                  <use xlink:href="assets/sprite.svg#icon-fastfood"></use>
+                </svg>
+
+                <span data-btn-num="0"> Foods </span>
+              </h2>
+
+              <button
+                class="btn-de product-desc-btn--all"
+                data-btn-num="0"
+                href="#food"
+              >
+                <svg class="icon specie-icon">
+                  <use xlink:href="assets/sprite.svg#icon-th-small"></use>
+                </svg>
+
+                <span>All Products</span>
+              </button>
+            </div>
+
+            <div
+              class="species-contents species-contents--food"
+              data-container-num="0"
+              data-container-name="food"
+            >
+              <!-- food item (1) -->
+              <div
+                class="species-item species-item--food"
+                data-item-type="food"
+                data-item-price="20"
+                data-item-date="2012-12-30"
+              >
+                <div class="species-item-frame item-pict-food--item-1">
+                  <img src="/assets/images/milk-bottle.png" alt="milk bottle" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-local_restaurant"
+                      ></use>
+                    </svg>
+
+                    <span class="item-name item-name-food--item-1">
+                      Milk Bottle
+                    </span>
+                  </h3>
+
+                  <p class="species-item-text item-desc-food--item-1">
+                    Milk bottle, 100 ml. Highly recommended for children with 3
+                    years or more.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-food--item-1"
+                      >30-12-2012</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-food--item-1">20</span>
+                      <span
+                        class="item-price-currency item-price-curr-food--item-1"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- food item (2) -->
+              <div
+                class="species-item species-item--food"
+                data-item-type="food"
+                data-item-price="4"
+                data-item-date="2018-11-04"
+              >
+                <div class="species-item-frame item-pict-food--item-2">
+                  <img
+                    src="/assets/images/orange-juice.jpg"
+                    alt="orange juice bottle"
+                  />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-local_restaurant"
+                      ></use>
+                    </svg>
+
+                    <span class="item-name item-name-food--item-2"
+                      >Orange Juice</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-food--item-2">
+                    120 ml healthy orange juice, originally manufactured in
+                    Australia.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-food--item-2"
+                      >4-11-2018</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-food--item-2">4</span>
+                      <span
+                        class="item-price-currency item-price-curr-food--item-2"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- food item (3) -->
+              <div
+                class="species-item species-item--food"
+                data-item-type="food"
+                data-item-price="2"
+                data-item-date="2018-03-01"
+              >
+                <div class="species-item-frame item-pict-food--item-3">
+                  <img src="/assets/images/pepci.jpg" alt="Pepsi bottle" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-local_restaurant"
+                      ></use>
+                    </svg>
+
+                    <span class="item-name item-name-food--item-3"
+                      >Pepsi Can</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-food--item-3">
+                    25 ml Pepsi soda diet can, with pomegranate taste.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-food--item-3"
+                      >1-3-2018</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-food--item-3">2</span>
+                      <span
+                        class="item-price-currency item-price-curr-food--item-3"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- food item (4) -->
+              <div
+                class="species-item species-item--food"
+                data-item-type="food"
+                data-item-price="1"
+                data-item-date="2019-06-23"
+              >
+                <div class="species-item-frame item-pict-food--item-4">
+                  <img src="/assets/images/m&m.jpg" alt="m&m" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-local_restaurant"
+                      ></use>
+                    </svg>
+
+                    <span class="item-name item-name-food--item-4">m&m</span>
+                  </h3>
+
+                  <p class="species-item-text item-desc-food--item-4">
+                    m&m with chocolate and milk taste, 20 gm for bag.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-food--item-4"
+                      >23-6-2019</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-food--item-4">1</span>
+                      <span
+                        class="item-price-currency item-price-curr-food--item-4"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- food item (5) -->
+              <div
+                class="species-item species-item--food species-item--hide"
+                data-item-type="food"
+                data-item-price="1.1"
+                data-item-date="2022-04-01"
+              >
+                <div class="species-item-frame item-pict-food--item-5">
+                  <img src="/assets/images/mrcgips.jpg" alt="Mr.Chips" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-local_restaurant"
+                      ></use>
+                    </svg>
+
+                    <span class="item-name item-name-food--item-5"
+                      >Mr.Chips</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-food--item-5">
+                    30 gm Mr.Chips with salt taste, manufactured in Singapore.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-food--item-5"
+                      >1-4-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-food--item-5"
+                        >1.1</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-food--item-5"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- food item (6) -->
+              <div
+                class="species-item species-item--food species-item--hide"
+                data-item-type="food"
+                data-item-price="0.4"
+                data-item-date="2022-01-23"
+              >
+                <div class="species-item-frame item-pict-food--item-6">
+                  <img src="/assets/images/water.jpg" alt="water bottle" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-local_restaurant"
+                      ></use>
+                    </svg>
+
+                    <span class="item-name item-name-food--item-6"
+                      >Water Bottle</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-food--item-6">
+                    Water bottles packed with high effect of O3, 25 ml each.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-food--item-6"
+                      >23-1-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-food--item-6"
+                        >0.40</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-food--item-6"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- food item (7) -->
+              <div
+                class="species-item species-item--food species-item--hide"
+                data-item-type="food"
+                data-item-price="4.5"
+                data-item-date="2022-06-01"
+              >
+                <div class="species-item-frame item-pict-food--item-7">
+                  <img src="/assets/images/coffe.jpg" alt="Coffee" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-local_restaurant"
+                      ></use>
+                    </svg>
+
+                    <span class="item-name item-name-food--item-7"
+                      >Black Coffee</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-food--item-7">
+                    Black coffee from the Brazilian coffee forests, packed in
+                    Kuala Lumpur factories.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-food--item-7"
+                      >1-6-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-food--item-6"
+                        >4.5</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-food--item-6"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- food item (8) -->
+              <div
+                class="species-item species-item--food species-item--hide"
+                data-item-type="food"
+                data-item-price="1.3"
+                data-item-date="2022-05-01"
+              >
+                <div class="species-item-frame item-pict-food--item-8">
+                  <img src="/assets/images/sprite.jpg" alt="Sprite bottle" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use
+                        xlink:href="assets/sprite.svg#icon-local_restaurant"
+                      ></use>
+                    </svg>
+
+                    <span class="item-name item-name-food--item-8"
+                      >Sprite Soda</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-food--item-8">
+                    Soda Sprite, Jordan Factories Bottling. Every bottle has 20
+                    calories.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-food--item-8"
+                      >1-5-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-food--item-8"
+                        >1.3</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-food--item-8"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clothes products -->
+          <div class="species-container species-container--clothes">
+            <div class="product-desc">
+              <h2 class="heading-2 specie-name">
+                <svg class="icon specie-icon">
+                  <use xlink:href="assets/sprite.svg#icon-black-tie"></use>
+                </svg>
+
+                <span> Clothes </span>
+              </h2>
+
+              <button class="btn-de product-desc-btn--all" data-btn-num="1">
+                <svg class="icon specie-icon">
+                  <use xlink:href="assets/sprite.svg#icon-th-small"></use>
+                </svg>
+
+                <span>All Products</span>
+              </button>
+            </div>
+
+            <div
+              class="species-contents species-contents--clothes clothes"
+              data-container-num="1"
+              data-container-name="clothes"
+            >
+              <!-- Clothes item (1) -->
+              <div
+                class="species-item species-item--clothes"
+                data-item-type="clothes"
+                data-item-price="40"
+                data-item-date="2022-07-01"
+              >
+                <div class="species-item-frame item-pict-clothes--item-1">
+                  <img src="/assets/images/jaket-1.jpg" alt="jaket" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-tie"></use>
+                    </svg>
+
+                    <span class="item-name item-name-clothes--item-1"
+                      >Jacket</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-clothes--item-1">
+                    Hand-madded in Turkey. Black jacket color.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-clothes--item-1"
+                      >1-7-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-clothes--item-1"
+                        >40</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-clothes--item-1"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Clothes item (2) -->
+              <div
+                class="species-item species-item--clothes"
+                data-item-type="clothes"
+                data-item-price="15"
+                data-item-date="2019-06-30"
+              >
+                <div class="species-item-frame item-pict-clothes--item-2">
+                  <img
+                    src="/assets/images/babybag.jpg"
+                    alt="orange juice bottle"
+                  />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-tie"></use>
+                    </svg>
+
+                    <span class="item-name item-name-clothes--item-2"
+                      >Baby Bag</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-clothes--item-2">
+                    Made in China, only for babies with 4 years or less, with
+                    4-5 kgm.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-clothes--item-2"
+                      >30-6-2019</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-clothes--item-2"
+                        >15</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-clothes--item-2"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Clothes item (3) -->
+              <div
+                class="species-item species-item--clothes"
+                data-item-type="clothes"
+                data-item-price="23"
+                data-item-date="2020-08-01"
+              >
+                <div class="species-item-frame item-pict-clothes--item-3">
+                  <img src="/assets/images/babybag2.jpg" alt="baby bag" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-tie"></use>
+                    </svg>
+
+                    <span class="item-name item-name-clothes--item-3"
+                      >Baby Tools Bag</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-clothes--item-3">
+                    Good protector for babies tool, can protect a 25<sup>o</sup>
+                    temp for milk or water.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-clothes--item-3"
+                      >1-8-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-clothes--item-3"
+                        >23</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-clothes--item-3"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Clothes item (4) -->
+              <div
+                class="species-item species-item--clothes"
+                data-item-type="clothes"
+                data-item-price="11"
+                data-item-date="2022-01-05"
+              >
+                <div class="species-item-frame item-pict-clothes--item-4">
+                  <img src="/assets/images/babypants.jpg" alt="baby pant" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-tie"></use>
+                    </svg>
+
+                    <span class="item-name item-name-clothes--item-4"
+                      >Baby Pant</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-clothes--item-4">
+                    Made in China with high quality. 25 cm with 7 kgm babies.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-clothes--item-4"
+                      >5-1-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-clothes--item-4"
+                        >11</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-clothes--item-4"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Clothes item (5) -->
+              <div
+                class="species-item species-item--clothes species-item--hide"
+                data-item-type="clothes"
+                data-item-price="12"
+                data-item-date="2020-04-01"
+              >
+                <div class="species-item-frame item-pict-clothes--item-5">
+                  <img src="/assets/images/tshirt.jpg" alt="t shirt" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-tie"></use>
+                    </svg>
+
+                    <span class="item-name item-name-clothes--item-5"
+                      >Male T-Shirt</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-clothes--item-5">
+                    Made in Spain, 90% cotton and 10% plastic, green color.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-clothes--item-5"
+                      >1-4-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-clothes--item-5"
+                        >12</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-clothes--item-5"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Clothes item (6) -->
+              <div
+                class="species-item species-item--clothes species-item--hide"
+                data-item-type="clothes"
+                data-item-price="25"
+                data-item-date="2017-01-12"
+              >
+                <div class="species-item-frame item-pict-clothes--item-6">
+                  <img
+                    src="/assets/images/buttonshirt.jpg"
+                    alt="water bottle"
+                  />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-tie"></use>
+                    </svg>
+
+                    <span class="item-name item-name-clothes--item-6"
+                      >Shirt Buttons</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-clothes--item-6">
+                    High quality shirt, with over than 70% cotton. Hand madded
+                    in Spain.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-clothes--item-6"
+                      >12-1-2017</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-clothes--item-6"
+                        >25</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-clothes--item-6"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Clothes item (7) -->
+              <div
+                class="species-item species-item--clothes species-item--hide"
+                data-item-type="clothes"
+                data-item-price="5"
+                data-item-date="2022-08-13"
+              >
+                <div class="species-item-frame item-pict-clothes--item-7">
+                  <img src="/assets/images/babytsjirt.jpg" alt="Coffee" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-tie"></use>
+                    </svg>
+
+                    <span class="item-name item-name-clothes--item-7"
+                      >Baby Shirt</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-clothes--item-7">
+                    White baby shirt, 50% nilon plus 60% cotton. Made in Spain.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-clothes--item-7"
+                      >13-8-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-clothes--item-7"
+                        >5</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-clothes--item-7"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Clothes item (8) -->
+              <div
+                class="species-item species-item--clothes species-item--hide"
+                data-item-type="clothes"
+                data-item-price="65"
+                data-item-date="2022-09-03"
+              >
+                <div class="species-item-frame item-pict-clothes--item-8">
+                  <img src="/assets/images/shose.jpg" alt="shose" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-tie"></use>
+                    </svg>
+
+                    <span class="item-name item-name-clothes--item-8"
+                      >Shoes-Red</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-clothes--item-8">
+                    High quality sport shoe, 100% plastic from Adidas.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-clothes--item-8"
+                      >3-9-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-clothes--item-7"
+                        >65</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-clothes--item-7"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- More-Product Btn -->
+          <div class="more-product-block">
+            <button class="btn-de btn--more">
+              <svg class="icon specie-icon">
+                <use xlink:href="assets/sprite.svg#icon-unfold_more"></use>
+              </svg>
+
+              <span>More Products</span>
+            </button>
+          </div>
+
+          <!-- Mobile products -->
+          <div
+            class="species-container species-container--mobile species-container--hide"
+          >
+            <div class="product-desc">
+              <h2 class="heading-2 specie-name">
+                <svg class="icon specie-icon">
+                  <use xlink:href="assets/sprite.svg#icon-mobile2"></use>
+                </svg>
+
+                <span> Mobile </span>
+              </h2>
+
+              <button class="btn-de product-desc-btn--all" data-btn-num="2">
+                <svg class="icon specie-icon">
+                  <use xlink:href="assets/sprite.svg#icon-th-small"></use>
+                </svg>
+
+                <span>All Products</span>
+              </button>
+            </div>
+
+            <div
+              class="species-contents species-contents--mobile mobile"
+              data-container-num="2"
+              data-container-name="mobile"
+            >
+              <!-- mobile item (1) -->
+              <div
+                class="species-item species-item--mobile"
+                data-item-type="mobile"
+                data-item-price="400"
+                data-item-date="2022-07-01"
+              >
+                <div class="species-item-frame item-pict-mobiles--item-1">
+                  <img src="/assets/images/h1.jpg" alt="h1" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-mobile2"></use>
+                    </svg>
+
+                    <span class="item-name item-name-mobiles--item-1"
+                      >Huawei Nova8</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-mobiles--item-1">
+                    True-Form Dual-Matrix Camera | 6.6
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-mobiles--item-1"
+                      >1-7-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-mobiles--item-1"
+                        >400</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-mobiles--item-1"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- mobile item (2) -->
+              <div
+                class="species-item species-item--mobile"
+                data-item-type="mobile"
+                data-item-price="67"
+                data-item-date="2022-06-04"
+              >
+                <div class="species-item-frame item-pict-mobiles--item-2">
+                  <img src="/assets/images/h2.jpg" alt="orange juice bottle" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-mobile2"></use>
+                    </svg>
+
+                    <span class="item-name item-name-mobiles--item-2"
+                      >Samsung 20A</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-mobiles--item-2">
+                    50 MP Ultra Vision Camera 1/1.28 inch Ultra Vision Sensor .
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-mobiles--item-2"
+                      >4-6-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-mobiles--item-2"
+                        >67</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-mobiles--item-2"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- mobile item (3) -->
+              <div
+                class="species-item species-item--mobile"
+                data-item-type="mobile"
+                data-item-price="230"
+                data-item-date="2022-08-01"
+              >
+                <div class="species-item-frame item-pict-mobiles--item-3">
+                  <img src="/assets/images/h3.jpg" alt="baby bag" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-mobile2"></use>
+                    </svg>
+
+                    <span class="item-name item-name-mobiles--item-3"
+                      >Samsung S8</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-mobiles--item-3">
+                    PD Autofocus Take in massive light and detail for super
+                    clarity.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-mobiles--item-3"
+                      >1-8-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-mobiles--item-3"
+                        >230</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-mobiles--item-3"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- mobile item (4) -->
+              <div
+                class="species-item species-item--mobile"
+                data-item-type="mobile"
+                data-item-price="110"
+                data-item-date="2022-01-05"
+              >
+                <div class="species-item-frame item-pict-mobiles--item-4">
+                  <img src="/assets/images/h4.jpg" alt="baby pants" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-mobile2"></use>
+                    </svg>
+
+                    <span class="item-name item-name-mobiles--item-4"
+                      >Huawei 3i</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-mobiles--item-4">
+                    Telephoto video 4K Time video Cinematic video camera with
+                    multiple features.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-mobiles--item-4"
+                      >5-1-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-mobiles--item-4"
+                        >110</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-mobiles--item-4"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- mobile item (5) -->
+              <div
+                class="species-item species-item--mobile species-item--hide"
+                data-item-type="mobile"
+                data-item-price="1040"
+                data-item-date="2022-04-01"
+              >
+                <div class="species-item-frame item-pict-mobiles--item-5">
+                  <img src="/assets/images/iphonepink.jpg" alt="t shirt" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-mobile2"></use>
+                    </svg>
+
+                    <span class="item-name item-name-mobiles--item-5"
+                      >iPhone Pink-125G</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-mobiles--item-5">
+                    1/1.54 inch sensor Ultra Low-light video Ultra Slow-motion
+                    video.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-mobiles--item-5"
+                      >1-4-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-mobiles--item-5"
+                        >1040</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-mobiles--item-5"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- mobile item (6) -->
+              <div
+                class="species-item species-item--mobile species-item--hide"
+                data-item-type="mobile"
+                data-item-price="250"
+                data-item-date="2022-01-12"
+              >
+                <div class="species-item-frame item-pict-mobiles--item-6">
+                  <img src="/assets/images/iphonered.jpg" alt="water bottle" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-mobile2"></use>
+                    </svg>
+
+                    <span class="item-name item-name-mobiles--item-6"
+                      >iPhone Red-256G</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-mobiles--item-6">
+                    Real-time depth detection Create professional-level bokeh
+                    effects.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-mobiles--item-6"
+                      >12-1-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-mobiles--item-6"
+                        >250</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-mobiles--item-6"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- mobile item (7) -->
+              <div
+                class="species-item species-item--mobile species-item--hide"
+                data-item-type="mobile"
+                data-item-price="500"
+                data-item-date="2022-05-01"
+              >
+                <div class="species-item-frame item-pict-mobiles--item-7">
+                  <img src="/assets/images/samsung-1.jpg" alt="Coffee" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-mobile2"></use>
+                    </svg>
+
+                    <span class="item-name item-name-mobiles--item-7"
+                      >SAMSUNG 12A</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-mobiles--item-7">
+                    Camera redefines super clarity shooting regardless of light
+                    conditions.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-mobiles--item-7"
+                      >1-5-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-mobiles--item-7"
+                        >500</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-mobiles--item-7"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- mobile item (8) -->
+              <div
+                class="species-item species-item--mobile species-item--hide"
+                data-item-type="mobile"
+                data-item-price="650"
+                data-item-date="2022-06-03"
+              >
+                <div class="species-item-frame item-pict-mobiles--item-8">
+                  <img src="/assets/images/samsung-2.jpg" alt="shose" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-mobile2"></use>
+                    </svg>
+
+                    <span class="item-name item-name-mobiles--item-8"
+                      >SAMSUNG 50A</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-mobiles--item-8">
+                    XD Fusion Engine powered by the upgraded ISP and NPU.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-mobiles--item-8"
+                      >3-6-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-mobiles--item-8"
+                        >650</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-mobiles--item-8"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Computer products -->
+          <div
+            class="species-container species-container--computer species-container--hide"
+          >
+            <div class="product-desc">
+              <h2 class="heading-2 specie-name">
+                <svg class="icon specie-icon">
+                  <use xlink:href="assets/sprite.svg#icon-laptop"></use>
+                </svg>
+
+                <span> Computers </span>
+              </h2>
+
+              <button class="btn-de product-desc-btn--all" data-btn-num="3">
+                <svg class="icon specie-icon">
+                  <use xlink:href="assets/sprite.svg#icon-th-small"></use>
+                </svg>
+
+                <span>All Products</span>
+              </button>
+            </div>
+
+            <div
+              class="species-contents species-contents--computer computer"
+              data-container-num="3"
+              data-container-name="computer"
+            >
+              <!-- computer item (1) -->
+              <div
+                class="species-item species-item--computer"
+                data-item-type="computer"
+                data-item-price="4000"
+                data-item-date="2022-07-01"
+              >
+                <div class="species-item-frame item-pict-computer--item-1">
+                  <img src="/assets/images/laptop1.jpg" alt="h1" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-laptop"></use>
+                    </svg>
+
+                    <span class="item-name item-name-computer--item-1"
+                      >HP ProBook 455 G8</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-computer--item-1">
+                    HP 455 G8 NEW 7 5800U up to 4.4GHz 8-Cores 20M Cash , 8GB
+                    RAM DDR4.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-computer--item-1"
+                      >1-7-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-computer--item-1"
+                        >4000</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-computer--item-1"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- computer item (2) -->
+              <div
+                class="species-item species-item--computer"
+                data-item-type="computer"
+                data-item-price="670"
+                data-item-date="2022-07-04"
+              >
+                <div class="species-item-frame item-pict-computer--item-2">
+                  <img
+                    src="/assets/images/laptop2.jpg"
+                    alt="orange juice bottle"
+                  />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-laptop"></use>
+                    </svg>
+
+                    <span class="item-name item-name-computer--item-2"
+                      >Dell Vostro 3510</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-computer--item-2">
+                    Intel Core i5 11Gen up to 4.2Ghz 4-Cores 8M Cash, 4GB DDR4
+                    RAM.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-computer--item-2"
+                      >4-7-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-computer--item-2"
+                        >670</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-computer--item-2"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- computer item (3) -->
+              <div
+                class="species-item species-item--computer"
+                data-item-type="computer"
+                data-item-price="2300"
+                data-item-date="2022-08-23"
+              >
+                <div class="species-item-frame item-pict-computer--item-3">
+                  <img src="/assets/images/laptop3.jpg" alt="baby bag" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-laptop"></use>
+                    </svg>
+
+                    <span class="item-name item-name-computer--item-3"
+                      >Asus VivoBook Pro 14</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-computer--item-3">
+                    Intel Core i5 11Gen 11300H up to 4.5Ghz 4-Cores 12M Cash,
+                    8G.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-computer--item-3"
+                      >23-8-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-computer--item-3"
+                        >2300</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-computer--item-3"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- computer item (4) -->
+              <div
+                class="species-item species-item--computer"
+                data-item-type="computer"
+                data-item-price="1100"
+                data-item-date="2022-09-05"
+              >
+                <div class="species-item-frame item-pict-computer--item-4">
+                  <img src="/assets/images/laptop4.jpg" alt="baby pants" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-laptop"></use>
+                    </svg>
+
+                    <span class="item-name item-name-computer--item-4"
+                      >ThinkPad X1 Titanium</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-computer--item-4">
+                    Intel Core i7 11Gen up to 4.4GHz 4-Cores 12M Cash , 16GB RAM
+                    DDR4 , 512GB.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-computer--item-4"
+                      >5-9-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-computer--item-4"
+                        >1100</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-computer--item-4"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- computer item (5) -->
+              <div
+                class="species-item species-item--computer species-item--hide"
+                data-item-type="computer"
+                data-item-price="4230"
+                data-item-date="2022-02-13"
+              >
+                <div class="species-item-frame item-pict-computer--item-5">
+                  <img src="/assets/images/laptop5.jpg" alt="t shirt" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-laptop"></use>
+                    </svg>
+
+                    <span class="item-name item-name-computer--item-5"
+                      >Lenovo ThinkPad X12</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-computer--item-5">
+                    Intel Core i7 11Gen up to 4.4GHz 4-Cores 12M Cash , 16GB RAM
+                    DDR4 , 5.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-computer--item-5"
+                      >13-2-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-computer--item-5"
+                        >4230</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-computer--item-5"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- computer item (6) -->
+              <div
+                class="species-item species-item--computer species-item--hide"
+                data-item-type="computer"
+                data-item-price="1300"
+                data-item-date="2022-01-12"
+              >
+                <div class="species-item-frame item-pict-computer--item-6">
+                  <img src="/assets/images/laptop6.jpg" alt="water bottle" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-laptop"></use>
+                    </svg>
+
+                    <span class="item-name item-name-computer--item-6"
+                      >Dell Latitude 5520</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-computer--item-6">
+                    Core i7 11Gen up to 4.7Ghz 4-Cores 12M Cash, 8GB DDR4 RAM ,
+                    512GB PCIe.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-computer--item-6"
+                      >12-1-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-computer--item-6"
+                        >1300</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-computer--item-6"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- computer item (7) -->
+              <div
+                class="species-item species-item--computer species-item--hide"
+                data-item-type="computer"
+                data-item-price="5009"
+                data-item-date="2022-06-30"
+              >
+                <div class="species-item-frame item-pict-computer--item-7">
+                  <img src="/assets/images/laptop7.jpg" alt="Coffee" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-laptop"></use>
+                    </svg>
+
+                    <span class="item-name item-name-computer--item-7"
+                      >Dell Latitude 7420</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-computer--item-7">
+                    Core i7 11Gen up to 4.7Ghz 4-Cores 12M Cash, 16GB DDR4 RAM ,
+                    512GB M.2.
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-computer--item-7"
+                      >30-6-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-computer--item-7"
+                        >5009</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-computer--item-7"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- computer item (8) -->
+              <div
+                class="species-item species-item--computer species-item--hide"
+                data-item-type="computer"
+                data-item-price="560"
+                data-item-date="2022-02-12"
+              >
+                <div class="species-item-frame item-pict-computer--item-8">
+                  <img src="/assets/images/laptop8.jpg" alt="shose" />
+                </div>
+
+                <div class="species-item-desc">
+                  <h3 class="heading-3 specie-item-name">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-laptop"></use>
+                    </svg>
+
+                    <span class="item-name item-name-computer--item-8"
+                      >Lenovo NEW ThinkPad</span
+                    >
+                  </h3>
+
+                  <p class="species-item-text item-desc-computer--item-8">
+                    Intel Core i7 up to 4.7GHz 12M Cash 4-Cores , 8GB RAM DDR4 ,
+                    512GB M .
+                  </p>
+
+                  <div class="species-item-date">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-calendar"></use>
+                    </svg>
+
+                    <span class="item-date item-date-computer--item-8"
+                      >12-2-2022</span
+                    >
+                  </div>
+
+                  <div class="species-item-price">
+                    <svg class="icon specie-item-icon">
+                      <use xlink:href="assets/sprite.svg#icon-money"></use>
+                    </svg>
+
+                    <h4 class="heading-4">
+                      <span class="item-price item-price-computer--item-8"
+                        >560</span
+                      >
+                      <span
+                        class="item-price-currency item-price-curr-computer--item-8"
+                        >JD</span
+                      >
+                    </h4>
+                  </div>
+
+                  <div class="add-to-cart-container">
+                    <button class="btn-de product-desc-btn--cart">
+                      <svg class="icon specie-icon">
+                        <use
+                          xlink:href="assets/sprite.svg#icon-add_shopping_cart"
+                        ></use>
+                      </svg>
+
+                      <span>Add to Cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- More-Product Btn -->
+          <div class="less-product-block">
+            <button class="btn-de btn--less" style="display: none">
+              <svg class="icon specie-icon">
+                <use xlink:href="assets/sprite.svg#icon-clear_all"></use>
+              </svg>
+
+              <span>Less Products</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS's in-links -->
+    <script src="/javaScripts/products.js"></script>
+    <script src="/javaScripts/filter.js"></script>
+    <script src="/javaScripts/searchProducts.js"></script>
+    <script src="/javaScripts/cart.js"></script>
+
+    <!-- JS's out-links: For Bootstrap-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
